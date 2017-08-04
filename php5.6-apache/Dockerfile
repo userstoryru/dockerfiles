@@ -1,4 +1,4 @@
-FROM docker-registry:5000/php:5.6
+FROM userstoryru/php5.6
 
 # update
 RUN apt-get update
