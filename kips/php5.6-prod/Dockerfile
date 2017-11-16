@@ -1,4 +1,4 @@
-FROM dr.userstory.ru/php:5.6-apache
+FROM userstoryru/php:5.6-apache
 
 # update
 RUN apt-get update
