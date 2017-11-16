@@ -7,4 +7,8 @@ RUN apt-get update
 RUN apt-get install -y exim4-daemon-heavy
 
 EXPOSE 25
-CMD ["exim", "-bd", "-v", "-q30m"]
+#CMD ["exim", "-bd", "-v", "-q30m"]
+
+COPY start.sh /usr/bin/
+
+CMD ["start.sh"]
