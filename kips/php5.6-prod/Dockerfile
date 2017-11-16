@@ -1,4 +1,4 @@
-FROM userstoryru/php5.6-apache
+FROM dr.userstory.ru/php:5.6-apache
 
 # update
 RUN apt-get update
@@ -9,9 +9,15 @@ RUN apt-get install -y mysql-client
 # unoconv
 RUN apt-get install -y unoconv sudo
 
+# unoconv hack
+RUN chown -R www-data:www-data /var/www && sudo -u www-data unoconv -f pdf foo >/dev/null 2>&1 || true
+
 # mc
 RUN apt-get install -y mc
 ENV TERM=xterm
+
+# graphviz
+RUN apt-get install -y graphviz
 
 # ffmpeg
 RUN echo deb http://ftp.uk.debian.org/debian jessie-backports main >>/etc/apt/sources.list

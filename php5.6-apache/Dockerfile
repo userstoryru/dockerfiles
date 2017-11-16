@@ -1,4 +1,4 @@
-FROM userstoryru/php5.6
+FROM dr.userstory.ru/php:5.6
 
 # update
 RUN apt-get update
@@ -9,7 +9,8 @@ RUN apt-get install -y apache2 libapache2-mod-rpaf libapache2-mod-php5 \
     && a2enmod rpaf \
     && a2enmod proxy \
     && a2enmod proxy_http \
-    && a2enmod headers
+    && a2enmod headers \
+    && a2enmod remoteip
 
 # configure php
 RUN echo "date.timezone = UTC" >> /etc/php5/apache2/php.ini

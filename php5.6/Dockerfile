@@ -15,6 +15,7 @@ RUN apt-get install -y \
     php5-ldap \
     php5-mcrypt \
     php5-memcache \
+    php5-memcached \
     php5-mhash \
     php5-mongo \
     php5-mysql \
